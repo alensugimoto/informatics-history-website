@@ -1,0 +1,351 @@
+<!-- INLINE CSS ALOWED FOR PERSONALIZED STYLING -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/main_css.css">
+    <!--PUT YOUR NAME HERE -->
+    <meta name="author" content="Giacomo_Solaro">
+    <!--PUT YOUR TITLE OF YOUR PAGE HERE -->
+    <title>The Bitcoin</title>
+</head>
+<body id="bodyTag">
+
+    <header>
+      <div class="nextPage">
+        <!--PUT THE NEXT PAGE IN HERE (e.g as shown)-->
+        <a href="./giacomo4.html">
+        <h1>
+          <svg class="iconArrow before">
+            <use xlink:href="#arrow"></use>
+          </svg>
+          <span class="label">Next Page</span>
+          <svg class="iconArrow after">
+          <use xlink:href="#arrow"></use>
+          </svg>
+
+        </h1>
+      </a>
+      </div>
+
+     <svg style="display: none;">
+       <defs>
+         <symbol id="arrow" viewBox="0 0 35 15">
+           <title>Arrow</title>
+           <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z "/>
+         </symbol>
+       </defs>
+     </svg>
+
+
+
+      <div class="menuBarProject">
+        <input type="checkbox" id="myInput"  onclick="myFunction()">
+
+
+        <label for="myInput">
+
+          <span class="bar top"></span>
+          <span class="bar middle"></span>
+          <span class="bar bottom"></span>
+        </label>
+
+        <aside>
+
+          <div class="asideSection asideLeft" style="z-index: 1;">
+            <div class="asideContent">
+              <!--PUT THE TITLE OF THE PROJECT (EVENT OR PRODUCT YOU ARE DESCRIBING) -->
+              <p>The Bitcoin</p>
+
+              <h1>
+                <a href="../../../index.html" style="color: #0B0C10; text-decoration: none;">
+                <svg class="iconArrow before">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+                <span class="label">Home</span>
+                <svg class="iconArrow after">
+                  <use xlink:href="#arrow"></use>
+                </svg>
+              </a>
+              </h1>
+             <br>
+             <br>
+
+             <h1>
+              <a href="../../../documentation/doc.html" style="color: #0B0C10; text-decoration: none;">
+              <svg class="iconArrow before">
+                <use xlink:href="#arrow"></use>
+              </svg>
+              <span class="label">Docs</span>
+              <svg class="iconArrow after">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </a>
+            </h1>
+
+
+            </div>
+          </div>
+
+          <div class="asideSection asideRight">
+            <ul class="asideList">
+              <li><a href="../../../index.html#1970" class="asideAnchor">1970s</a></li>
+              <li><a href="../../../index.html#1980" class="asideAnchor">1980s</a></li>
+              <li><a href="../../../index.html#1990" class="asideAnchor">1990s</a></li>
+              <li><a href="../../../index.html#2000" class="asideAnchor">2000s</a></li>
+              <li><a href="../../../index.html#2010" class="asideAnchor">2010s</a></li>
+            </ul>
+          </div>
+        </aside>
+        </div>
+    </header>
+
+
+
+    <div class="containerPageThree">
+        <div class="why">
+            <b>Why it represents a milestone?</b> <!--CHANGE THIS-->
+        </div>
+        <div class="container">
+          <div class="row topLevelRow">
+
+            <!--PUT THE IMAGE1 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThree">
+              <blockquote class="col columnOfContentPageThree" cite="https://www.insiderecent.com/wp-content/uploads/2018/02/blockchain.png" >
+              <img class="columnOfContentPageThreeImg img-fluid" src="../../../images/daniela_gjorgjieva/solaro_giacomo/Bcdb.png" alt="Blockchain Database" >
+            </blockquote>
+            </div>
+
+            <!--PUT THE DESCRIPTION OF IMAGE1 OF THE PROJECT -->
+            <!--e.g below-->
+
+            <div class="col columnOfContentPageThreeText align-self-center textDivOnPageThree">
+
+<p>
+<b>The Blockchain Database </b>
+<br>
+<br>
+The most important contribution that bitcoin brought to the world of informatics is the first Blockchain Database.<br><br>
+A generic blockchain can be described as a <strong>P2P network which mantains some shared state</strong> (in the bitcoin system this shared state is the sequence of transactions).
+<br><br>
+This <strong>data is stored in a linked-list-like data structured</strong> (which is made of linked blocks, which is where the name blockchain database derives from),
+new blocks containing <strong>new data can be added only at the end of the list and once added the data can't be modified</strong>.
+<br>
+Each block points to the block that came before it,
+the genesis block is the only exception that doesn't point to a previous block since it's the first one and it's normally hardcoded in the software.
+<br><br>
+<strong>To prevent data modification and to guarantee the integrity of the
+data, <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Hashing</a> is used</strong>.
+<br>
+Sice the block's hash is calculeted based on the previous block's hash but also by the content of the new block, modify data would change the Hash
+of the block which contains it, as well as the hash of all subsequent blocks, that's what makes really easy to spot and correct any modified data in the blockchain.
+<br><br>
+The creation of a new block, must follow a set of rules called the <strong>consensus protocol</strong> (in the bitcoin system this protocol is the proof of work), since creating a new block requires a lot of computational power,
+this protocol usally define a reward for the block creator, in order to incentify people to do so.
+<br>
+<br>
+Bitcoin is non other than the first application of this new type of database wich was used to rapresent a monetary value. Other applications of this new technology include others cryptocurrencies (like <a href="https://en.wikipedia.org/wiki/Litecoin">Litecoin</a> and <a href="https://en.wikipedia.org/wiki/Ethereum">Ether</a> )
+and more importantly <a href="https://en.wikipedia.org/wiki/Smart_contract#:~:text=A%20smart%20contract%20is%20a,a%20contract%20or%20an%20agreement.">smart contracts</a>.
+
+
+
+            </div>
+
+            <div class="w-100"></div>
+
+            <!--PUT THE DESCRIPTION OF IMAGE2 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThreeText align-self-center textDivOnPageThree">
+
+<p>
+              <b>The First Decentralized Digital Currency Indipendent From Financial Institutions Or Governments</b>
+              <br>
+              <br>
+
+The bitcoin is the first cryptocurrency, a purely digital asset, used as medium of exchange which is managed controlled and created using <a href="https://en.wikipedia.org/wiki/Cryptography">cryptography</a>, rather
+than relying on a central authorities.
+ <br><br>
+With traditional currency, in order to avoid fraud and prevent double spending, we rely on trusted third parties (financial institutions) to process the transactions.
+<br>
+This metod has a number of issues, one of the main one is that banks require fees and commission, they can charge up to 10% of the transaction ammount, just to send the money. The second main problem is that in order to process the transaction,
+we are giving away all our personal data, loosing our privacy.
+<br>
+<br>
+Bicoin solved both of this issues by <strong>replacing the trusted party with a peer to peer network</strong> and by<strong> ensuring anonimity in transactions, using id keys</strong>.
+<br><br>
+In the bitcoin system in order to make a transaction, you will need a <strong>bitcoin account</strong>, which can be created by generating a cryptographic key pair, a <strong>public key</strong> and a <strong>private key</strong>.
+<br><br>
+The hash of the public key is used as your <strong>account address</strong>, while the private key is kept secret and it's used to prove that you have <strong>ownership of this bitcoin account</strong>.<br>
+In order to send bitcoin, you have to boradcast a signed message (for signing a message the private key is used) with the ammount of bitcoins and destination account to the network. <br>
+This message is sent to all nodes and miners, who will
+verify that it is correctly formatted, if it is, at this point the transaction is still unconfirmed. once a miner include the transaction in a new block the transaction has been confirmed. From here the more block exists after your transaction,
+the more secure your transaction will be.
+<br> <br>
+Since no one knows to whom a key belong, anonimity is guaranteed and there are no fees or commitions involved, since the miners are rewarded by the system for processing transaction with new bitcoins.
+</p>
+
+
+
+
+            </div>
+
+            <!--PUT THE IMAGE2 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThree">
+              <blockquote class="col columnOfContentPageThree" cite="https://i.stack.imgur.com/YXguz.png">
+              <img class="columnOfContentPageThreeImg img-fluid" src="../../../images/daniela_gjorgjieva/solaro_giacomo/bctrans.png" alt="Bitcoin Transaction" >
+            </blockquote>
+            </div>
+
+            <div class="w-100"></div>
+
+            <!--PUT THE IMAGE3 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThree">
+              <blockquote class="col columnOfContentPageThree" cite="https://digitalbusiness.world/files/temp/article-752/1517902985_1600_1200_hacking-3112539_1920.png">
+              <img class="columnOfContentPageThreeImg img-fluid" src="../../../images/daniela_gjorgjieva/solaro_giacomo/bcsecurity.png" alt=" Securuty">
+            </blockquote>
+            </div>
+
+            <!--PUT THE DESCRIPTION OF IMAGE3 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThreeText align-self-center textDivOnPageThree">
+    <p>
+      <b>The Best Method To Secure And Mantain Permanent Data</b>
+      <br><br>
+      This new monetary exchange system is also far more secure than a centralized one, since it use an enormous ammount of computational power to ensure the unicity of the data and the creation of the chain, in order to perform a <strong>successfull attack to the system, a bad actor would need to operate 51%
+      of the computing power that makes up Bitcoin</strong>.
+      <br>
+      (as for May 2020 Bitcoin has around 47,000 nodes and the number is still growing, rendering a successfull attack even more improbable).
+      <br><br>
+
+      In the event that an attack was to happen, the Bitcoin nodes (people whose pc take part in the Bitcoin network), would
+      likely <a href="https://en.wikipedia.org/wiki/List_of_bitcoin_forks#:~:text=Bitcoin%20forks%20are%20defined%20variantly,have%20the%20same%20block%20height%22.&text=Forks%20are%20typically%20conducted%20in,of%20hacking%20or%20catastrophic%20bugs.">fork</a> to a new blockchain making the resources used and the attack a waste.
+
+
+
+    </p>
+            </div>
+
+            <div class="w-100"></div>
+
+            <!--PUT THE DESCRIPTION OF IMAGE4 OF THE PROJECT -->
+            <!--e.g below-->
+            <div class="col columnOfContentPageThreeText align-self-center textDivOnPageThree ">
+<p>
+<b>Bitcoin Financial Impact</b>
+<br><br>
+Bitcoin was also the first digital asset that was accepted by society as a new type of currency, From the mid 2010s, some businesses and no profit organizations, began accepting bitcoin in
+addition to traditional currencies.
+<br>
+<br>
+
+The new currency was basically worthless until <strong>February 2011 where for the first time 1 Bitcoin was worth $ 1</strong>.
+<br>
+From that moment on, the currency started gaining a huge exposure, thanks to numerous controvercies, like the currency bein used in internet's black markets, to pay for illegal goods such as drugs and weapons, but
+also regarding fraoud accusation and bankrupcy of the most popular bitcoin exchange website at the time <a href="https://en.wikipedia.org/wiki/Mt._Gox#:~:text=Gox%20was%20a%20bitcoin%20exchange,In%20February%202014%2C%20Mt.">Mt.Gox</a> who went under in 2014.
+<br>
+<br>
+During this period the <strong>value of 1 bitcoin was flutuating between 1000 and 200 USD</strong>.<br><br>
+In 2014, the U.S. Commodity Futures Trading Commission, (a U.S. regulatory agency), approved for the first time in history the listing of an over-the-counter swap product based on the price of a bitcoin.
+<br>
+ Microsoft and Dell also started to accept bicoin as payment in 2014.
+<br>
+<br>
+More and more businesses began accepting bicoin as payment, but <strong>in 2017 also govenments, like Japan and Russia legalized Bitcoins as legitimate payment methods</strong>.
+<br>
+<br>
+On 1 August 2017 something peculiar happend, <strong>bitcoin was spitted into two derivative digital currencies</strong>, the <strong>Bitcoin (BTC) </strong>(that has a chain with 1 MB blocksize limit) and the <strong>Bitcoin Cash (BCH)</strong> (that has a chain with 8 MB blocksize limit). The split is called "The Bitcoin Cash Hard Fork".
+<br>
+<br>
+The ever growing intrest in the bitcoin currency and his acceptance by governments, caused a very fast increase in his value until December 2017 where it reached his peak value. At that time,
+<strong>a single bitcoin was worth nearly $20,000</strong>.
+ <br>
+ <br>
+ At this point the speculative bubble created around bitcoins reached his peak and started deflating as people started selling their bitcoins. The price dropped at 3,300 USD per Bitcoin in december 2018.
+<br><br>
+At this day (08.11.2020) a Bitcoin is worth 15,328.40 USD and we have mined around 18.5 million bitcoins out of the 21 million maximum total bitcoin in circulation.
+
+
+
+
+
+
+</p>
+            </div>
+
+            <!--PUT THE IMAGE4 OF THE PROJECT -->
+            <!--e.g below-->
+
+            <div class="col columnOfContentPageThree">
+              <blockquote class="col columnOfContentPageThree" cite="https://walletinvestor.com/static/frontend/forecast-graphs/c4/crypto-bitcoin-forecast.png?v=1577073117">
+                <img class="columnOfContentPageThreeImg img-fluid" src="../../../images/daniela_gjorgjieva/solaro_giacomo/bchart.png" alt="Bitcoin Price Chart" >
+              </blockquote>
+            </div>
+
+
+
+          </div>
+        </div>
+  </div>
+
+
+        <!--Footer -->
+        <footer>
+          <div class="row my-5 justify-content-center py-5">
+              <div class="col-11">
+                  <div class="row ">
+                      <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                          <h3 class="text-muted mb-md-0 mb-5 bold-text">Recent Informatics History.</h3>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                          <h6 class="mb-3 mb-lg-4 bold-text "><b>Decades</b></h6>
+                          <ul class="list-unstyled">
+                            <li><a href="../../../index.html#1970" style="color: #212529; text-decoration: none;">1970s</a></li>
+                            <li><a href="../../../index.html#1980" style="color: #212529; text-decoration: none;">1980s</a></li>
+                            <li><a href="../../../index.html#1990" style="color: #212529; text-decoration: none;">1990s</a></li>
+                            <li><a href="../../../index.html#2000" style="color: #212529; text-decoration: none;">2000s</a></li>
+                            <li><a href="../../../index.html#2010" style="color: #212529; text-decoration: none;">2010s</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                          <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Educational Institution</b></h6>
+                          <p class="mb-1">Via Giuseppe Buffi 13, 6900 Lugano</p>
+                          <p>Università della Svizzera italiana</p>
+                      </div>
+                  </div>
+                  <div class="row ">
+                      <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                          <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Group 2 Project.</small>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                          <h6 class="mt-55 mt-2 text-muted bold-text"><b>SOLARO GIACOMO</b></h6>
+                        <address>
+                          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                          <a style="color:#212529" href="mailto:solarg@usi.ch">solarg@usi.ch</a>
+                        </address>
+                      </div>
+                      <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                          <h6 class="text-muted bold-text"><b>BAVOTA GABRIELE</b></h6>
+                          <address>
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <a style="color:#212529" href="mailto:gabriele.bavota@usi.ch">gabriele.bavota@usi.ch</a>
+                          </address>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+<!--Footer -->
+
+    <script src="../../../js/main_js.js"></script>
+    <script src="https://kit.fontawesome.com/c312527313.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

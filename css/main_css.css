@@ -1,0 +1,969 @@
+/*
+dark gray = #0B0C10
+dark blue = #1F2833
+light gray = #C5C6C7
+bright blue = #66FCF1
+mid blue = #45A29E
+*/
+
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+#bodyTag{
+  background-color: #0B0C10;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  /* Scroll Bar Customization */
+	background-color: #0B0C10;
+}
+
+body::-webkit-scrollbar
+{
+	width: 5px;                    /* Scroll Bar Customization */
+	background-color: #0B0C10;
+}
+
+body::-webkit-scrollbar-thumb
+{                                             /* Scroll Bar Customization */
+	background-color: #66FCF1;
+}
+
+/* HEADER */
+@media (max-width: 1920px) {
+
+
+.menuBarProject {
+  height: 100%;
+  width: 100%;
+  position: top;
+  padding-bottom: 2%;
+
+}
+
+
+.asideSection {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.asideLeft {
+  width: 40%;
+  left: 0;
+  background-color: #66FCF1;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%); /* styling the left part of the navigation menu */
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+
+}
+
+.asideRight {
+  width: 100%;
+  right: 0;
+  background-color: #0B0C10;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);    /* styling the right part of the navigation menu */
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 5;
+}
+
+.asideContent {
+  margin-top: 150px;
+  padding: 0 40px;
+  position: relative;
+  color: #0B0C10 !important;
+  text-align: center;
+}
+
+.asideList {
+  list-style: none;
+  padding: 0;
+  margin: 0;     /* posstioning of the li */
+  margin-top: 150px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.asideList li {
+  margin-bottom: 20px;
+  color: black;  /* posstioning of the the buttons in the ls */
+}
+
+.asideList li :hover{
+  color: #66FCF1;
+}
+.asideSection li a {
+  text-decoration: none;
+}
+
+.asideSection li a :hover {
+  color: black;
+}
+
+.nextPage {
+  padding-top: 1%;
+  margin-left: 85%;        /* Next Page Button posstioning */
+
+}
+
+.menuBarProject h1{
+  border: 4px solid #0B0C10;
+  color: #0B0C10;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: auto;                     /* all the h1 tags fonting Customization */
+  padding: 12px 32px 12px 82px;
+  position: relative;
+  text-decoration: none;
+  z-index: 4;
+}
+
+.nextPage h1 {
+  border: 4px solid #66FCF1;
+  color: #66FCF1;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;              /* all the h1 under nextPage Customization */
+  line-height: 24px;
+  margin: auto;
+  padding: 12px 32px 12px 82px;
+  position: relative;
+  text-decoration: none;
+  z-index: 4;
+}
+
+.menuBarProject h1 .label, .nextPage h1 .label,
+.menuBarProject h1 .iconArrow, .nextPage h1 .iconArrow {
+  backface-visibility: hidden;           /* the animation for the arrow */
+  transform: translateZ(0);
+  perspective: 1000;
+}
+
+.menuBarProject h1 .label, .nextPage h1 .label {
+  display: inline-block;
+  transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);       /* animation for the first arrow inside the the nextPag*/
+}
+
+.menuBarProject h1 .iconArrow{
+  fill:#0B0C10 !important;
+  height: 15px;
+  top: 17px;
+  transition: transform .5s cubic-bezier(0.84, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);     /* Animation for the iconArrow under menuBarProject*/
+  width: 35px;
+}
+.nextPage h1 .iconArrow {
+  fill: #66FCF1;
+  height: 15px;
+  top: 17px;
+  transition: transform .5s cubic-bezier(0.84, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);    /* Animation fo the iconArrow under nextPage*/
+  width: 35px;
+}
+
+.menuBarProject h1 .iconArrow.before, .nextPage h1 .iconArrow.before {
+  left: 32px;
+  margin-right: 15px;                                         /* the stable state of the iconArrow Customization */
+  position: absolute;
+  transform-origin: left center;
+}
+
+.menuBarProject h1 .iconArrow.after, .nextPage h1 .iconArrow.after {
+  margin-left: 15px;
+  opacity: 0;
+  position: absolute;                 /* once clicked the Customization of the iconArrow */
+  right: 32px;
+  transform: translateX(75%) scaleX(0.1);
+  transform-origin: right center;
+}
+
+.menuBarProject h1:hover .label, .nextPage h1:hover .label {
+  transform: translateX(-52px);                 /* hover animation of the h1 text under menuBarProject */
+}
+
+.menuBarProject h1:hover .iconArrow.before , .nextPage h1:hover .iconArrow.before {
+  opacity: 0;                                                   /* hover animation of the h1 and the first and second iconArrow at the stable state*/
+  transform: translateX(-75%) scaleX(0.1);
+}
+
+.menuBarProject h1:hover .iconArrow.after, .nextPage h1:hover .iconArrow.after {
+  opacity: 1;
+  transform: translateX(0) scaleX(1);                        /* hover animation of the h1 and the first and second iconArrow at the clicked state*/
+}
+
+.menuBarProject h1:active, .nextPage h1:active {
+  border-color: #45A29E !important;                  /* Properties of the h1 when active */
+  color: #45A29E !important;
+}
+
+.menuBarProject h1:active .iconArrow, .nextPage h1:active .iconArrow {
+  fill: #45A29E !important;       /* Properties of the h1 when active and also the arrow and their background color*/
+}
+
+.asideAnchor::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: #66FCF1;
+  color: black; /* style of the fitst half of the line bellow the buttons */
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.asideAnchor::before {
+  border-radius: 3px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: #C5C6C7;   /* style of the second half of the line bellow the buttons */
+  left: 0;
+  height: 3px;
+  z-index: 20;
+  width: 50%;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.asideAnchor:hover:before {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);   /* hover effect when hovering over the buttons */
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  text-decoration: none;
+}
+
+.asideAnchor {
+  padding-bottom: 7px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 90px;             /* text style insid the anchor */
+  position: relative;
+}
+.asideAnchor a {
+  color: black;
+}
+
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ aside .asideLeft {
+  transform: translateY(0%);
+  overflow: hidden;    /* animation of the left side of the navigation bar coming from top */
+}
+
+input[type="checkbox"]:checked ~ aside .asideRight {
+  transform: translateX(0%);     /* animation of the right side of the navigation bar coming from right*/
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: #1F2833; /* background color of the button for menuBar */
+}
+
+input[type="checkbox"]:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);    /* animation for the first line of the button */
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+  z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);  /* animation for the second line of the butto */
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+  z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ label .middle {   /* no animation needed as the line disepears*/
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+}
+
+label {
+  top: 10px;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: transparent;   /* design for the different lines*/
+  cursor: pointer;
+  margin: 10px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color: #66FCF1;
+  width: 30px;
+  height: 3px;    /* color change of the lines when no clicked on*/
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+  width 0.4s ease-in;
+}
+
+.asideContent p {
+  font-size: 90px;  /* font size of the p in side the assideContent*/
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.button {
+  display: inline-block;
+  background-image: none;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 7px;
+  position: relative;
+  cursor: pointer;       /* Default Button styling*/
+  font-size: 20px;
+  color: #1F2833;
+  padding: 7px 50px;
+  border: 2px solid white;
+}
+
+/* Documents page */
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #262626;
+  color: white;
+  transform: rotateY(180deg);
+  padding-top: 130px;
+}
+
+.buttonn{
+    width: 50%;
+    height: 20%;
+    border-radius: 50px !important;
+    background-color: transparent !important;
+    color: white !important;
+    border: solid white 1.5px !important;
+}
+
+    /* animation on hover */
+.buttonn:hover{
+    background-color: black !important;
+    color: white !important;
+}
+/* End Documents*/
+}
+@media (max-width: 1199px) {  /* To make the page responsive */
+  .asideLeft {
+    width: 40%;   /* decreasing the size of the left secion of the navigation bar */
+  }
+
+  .asideRight {
+    width: 60%;  /* decreasing the size of the right of the section bar and making it so that it is fine when the page is at the small state */
+  }
+
+  .bar{
+    margin-left: 70%;  /* the button to close and open. Not necesary but kept it for the future changes */
+    z-index: 4;
+  }
+
+  .asideContent p{
+    font-size: 40px !important;   /* decreasing the font size so that it is still readable  */
+  }
+
+  .nextPage {
+    padding-top: 1%;              /* decreasing the size of the next page button so that is still usable */
+    margin-left: 70%;
+
+  }
+
+}
+
+@media (max-width: 990px) {   /* When the screen size is very small  */
+  .asideRight{
+    width: 100%;
+    z-index: 2;
+  }
+
+  input[type="checkbox"]:checked ~ label .bar {
+    background-color: white;/* background color of the button for menuBar */
+    margin-right: 10%;
+  }
+
+  .nextPage {
+    padding-top: 1%;
+    margin-left: 55%;
+
+  }
+
+  .menuBarProject h1{
+    border: 4px solid #0B0C10;
+    color: #0B0C10;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: auto;                        /* changing the z index of it so that the bar could still be shown */
+    padding: 12px 32px 12px 82px;
+    position: relative;
+    text-decoration: none;
+    z-index: 4;
+  }
+
+  .nextPage h1 {
+    border: 4px solid #66FCF1;
+    color: #66FCF1;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;                      /* changing the z index so that the bar could still be shown */
+    line-height: 24px;
+    margin: auto;
+    padding: 12px 32px 12px 82px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+  }
+
+  .menuBarProject h1 .label, .nextPage h1 .label,
+  .menuBarProject h1 .iconArrow, .nextPage h1 .iconArrow {
+    backface-visibility: hidden;                                   /* same as above but kep to incase if there is more changes required in the future to make the website more responive  */
+    transform: translateZ(0);
+    perspective: 1000;
+  }
+
+  .menuBarProject h1 .label, .nextPage h1 .label {
+    display: inline-block;
+    transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .menuBarProject h1 .iconArrow{
+    fill:#0B0C10 !important;
+    height: 15px;
+    top: 17px;
+    transition: transform .5s cubic-bezier(0.84, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);
+    width: 35px;
+  }
+  .nextPage h1 .iconArrow {
+    fill: #66FCF1;
+    height: 15px;
+    top: 17px;
+    transition: transform .5s cubic-bezier(0.84, 0, 0.07, 1), opacity .4s cubic-bezier(0.86, 0, 0.07, 1);  /* chaging the width so that it is responsive */
+    width: 35px;
+  }
+
+  .menuBarProject h1 .iconArrow.before, .nextPage h1 .iconArrow.before {
+    left: 32px;
+    margin-right: 15px;
+    position: absolute;
+    transform-origin: left center;
+  }
+
+  .menuBarProject h1 .iconArrow.after, .nextPage h1 .iconArrow.after {
+    margin-left: 15px;
+    opacity: 0;
+    position: absolute;
+    right: 32px;
+    transform: translateX(75%) scaleX(0.1);
+    transform-origin: right center;
+  }
+
+  .menuBarProject h1:hover .label, .nextPage h1:hover .label {
+    transform: translateX(-52px);
+  }
+
+  .menuBarProject h1:hover .iconArrow.before , .nextPage h1:hover .iconArrow.before {
+    opacity: 0;
+    transform: translateX(-75%) scaleX(0.1);
+  }
+
+  .menuBarProject h1:hover .iconArrow.after, .nextPage h1:hover .iconArrow.after {
+    opacity: 1;
+    transform: translateX(0) scaleX(1);
+  }
+
+  .menuBarProject h1:active, .nextPage h1:active {
+    border-color: #45A29E !important;
+    color: #45A29E !important;
+  }
+
+  .menuBarProject h1:active .iconArrow, .nextPage h1:active .iconArrow {
+    fill: #45A29E !important;
+  }
+
+/* the above code is almost the same except minor changes which is mention specificly. The code is the same because if in the future the website has to be more responsive then this changes could be done more easily */
+
+
+}
+
+
+
+
+/*FOOTER*/
+
+.container-fluid {
+  overflow: hidden;
+  margin-top: 250px;
+  background: #262626;             /* Container which contains all the elements required inside the footer. Basic Properties could be changed here */
+  color: #627482 !important;
+  margin-bottom: 0;
+  padding-bottom: 0
+}
+
+small {
+  font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important   /* for the small size elements which is required in the element */
+}
+
+.bold-text {
+  color: #989c9e !important    /* Bold text and their speciic font color */
+}
+
+.mt-55 {
+  margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important  /* giving the proper margins to the footer so that it looks like a footer */
+}
+
+h3 {
+  font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important   /* h3 stuling under the footer tag */
+}
+
+.social {
+  font-size: 21px !important  /* Cusotomizing the font size of the text under social */
+}
+
+.rights {
+  font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important  /* Cusotomizing the size of the text under rights */
+}
+  /* END FOOTER */
+
+
+  /* Page 1 begin */
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+  .containerPageOne{
+    width: 70% !important;     /* basic page layout of the page 1 */
+    margin: auto !important;
+  }
+
+
+  .nameOfProject{
+    color: #66FCF1;
+    font-weight: bold;
+    padding-bottom: 5%;
+    text-align: center;
+    padding-bottom: 2%;   /* Title Customization */
+    text-align: center;
+    font-size: 80px;
+    padding-top: 2%;
+
+  }
+
+
+
+  .imageContainerPageOne{ /* Image posstioning */
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  .imageContainerPageOne img {
+    max-width: 75%;
+    width: 75%;                       /* Image Customization and its border and animation is included */
+    margin-left: 13%;
+    height: auto;
+
+    border-radius: 8px;
+    border-style:solid;
+    border-width:5px;
+    border-color:#66FCF1;
+
+    -webkit-animation: slidedown 5s ;
+    -moz-animation:    slidedown 5s ;
+    -o-animation:      slidedown 5s ;
+    animation:         slidedown 5s ;
+
+
+  }
+
+  @-webkit-keyframes slidedown {
+    0%   { opacity: 0; }   /* two frames Customization as it was too late to do it in the html */
+    100% { opacity: 1; }
+  }
+  @-moz-keyframes slidedown {
+    0%   { opacity: 0; }  /* two frames Customization as it was too late to do it in the html */
+    100% { opacity: 1; }
+  }
+  @-o-keyframes slidedown {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }  /* two frames Customization as it was too late to do it in the html */
+  }
+  @keyframes slidedown {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }  /* two frames Customization as it was too late to do it in the html */
+  }
+
+
+
+
+  /* Page 1 end */
+
+  /* Page 2 Content Page */
+  .containerPageTwo{
+    width: 70% !important;  /* Page 2 basic document layout */
+    margin: auto !important;
+  }
+  .topLevelRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   /* the first row sizing and Customization */
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  .columnOfContentPageTwo{
+    color: #C5C6C7;
+    text-align: center !important;
+    min-width: 400px;
+  }
+
+
+  /* image of the creator */
+  .imageOfCreatorPageTwo{
+    max-width: 400px;
+    width: 100%;
+  }
+
+  /* text divs */
+  .nameOfCreator{
+    color: #66FCF1;
+    padding-bottom: 10%;
+    text-align: center;
+    font-size: 300%;
+    padding-top: 2%;
+  }
+
+  .descriptionOfCreator{
+    color: #C5C6C7;
+    padding-top: 0;
+    padding-bottom: 20%;   /* description of the creation font Customization */
+    font-size: 200%;
+  }
+
+  /* center the blockquote in the page */
+  .blockquote-wrapper {
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+
+  }
+
+  .blockquote {
+    position: relative;
+    font-family: 'Barlow Condensed', sans-serif;
+    max-width: 620px;    /* the whole block quote sizing and Customization */
+    margin: auto;
+    align-self: center;
+  }
+
+  .blockquote h1 {
+    font-family: 'Abril Fatface', cursive;
+    position: relative; /* for pseudos */
+    color: #66FCF1;
+    font-size: 2.8rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;   /* Cusotomizing the h1 under blockquote */
+    border: 2px solid #fff;
+    border: solid 2px;
+    border-radius:20px;
+    padding: 25px;
+  }
+
+  .blockquote h1:after {
+    content:"";
+    position: absolute;
+    border: 2px solid #66FCF1;
+    border-radius: 0 50px 0 0;
+    width: 60px;
+    height: 60px;
+    bottom: -60px;   /* Cusotomizing the h1 under blockquote */
+    left: 50px;
+    border-bottom: none;
+    border-left: none;
+    z-index: 3;
+  }
+
+  .blockquote h1:before {
+    content:"";
+    position: absolute;
+    width: 80px;
+    border: 6px solid #0B0C10;    /* style of the h1 of the  */
+    bottom: -3px;
+    left: 50px;
+    z-index: 2;
+  }
+
+  @media all and (min-width:  600px) {
+    .blockquote h1 {
+      font-size: 3rem;     /* for different resulutions */
+      line-height: 1.2;
+    }
+
+  }
+
+  .blockquote h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;            /* Cusotomizing the h4 under blockquote */
+    padding-top: 15px;
+    z-index: 1;
+    margin-left:150px;
+    padding-left:12px;
+  }
+
+
+  .blockquote h4:first-letter {
+    margin-left:-12px;
+  }
+
+  /* end of page 2 */
+
+
+
+  /* Page 3 Content Page */
+
+  .containerPageThree{
+      width: 100% !important;
+      margin: auto !important;  /* Page layout of the page 3 */
+      column-gap: 40px;
+  }
+  .why{
+      color: #66FCF1;
+      padding-bottom: 5%;
+      text-align: center;   /* styling for why */
+      font-size: 300%;
+      padding-top: 5%;
+  }
+  .topLevelRow{
+      display: flex;  /* styling for the top row of the page 3 */
+  }
+  .columnOfContentPageThree{
+      color: #C5C6C7;
+      text-align: center !important;
+      display: flex;             /* styling the page 3 column */
+      justify-content: center;
+      margin-bottom: 10%;
+  }
+
+  .columnOfContentPageThreeText{
+      color: #C5C6C7;
+      padding-left: 10px;
+      text-align: center !important;
+      display: flex;
+      margin-bottom: 10%;
+      text-align: left !important;      /* styling the text */
+      background-color: #0B0C10;
+      -webkit-transition: .2s ease-in-out;
+      transition: .2s ease-in-out;
+  }
+  .textDivOnPageThree p{
+      font-size: 20px;
+      text-align: left; /* styling the p */
+      border-radius: 1px;
+      color: white;
+  }
+
+  .columnOfContentPageThreeImg {
+    max-width: 100%;
+    display: block;
+    grid-column: 1 / -1;  /* styling the image */
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  .columnOfContentPageThreeImg:hover > .columnOfContentPageThreeImg {
+          -webkit-transform: translate(-15px, -15px);
+          transform: translate(-15px, -15px);
+          -webkit-transition: .2s ease-in-out;   /* styling the hover effect on the image */
+          transition: .2s ease-in-out;
+          background-repeat: no-repeat;
+  }
+
+
+
+
+/* end of Page 3 Content Page */
+
+
+
+  /* Page 4 Content Page */
+  .containerPageFour{
+    width: 70% !important;
+    margin: auto !important;    /* styling the basic layout of the page 4 */
+    margin-bottom: 20%;
+    padding-bottom: 60px;
+  }
+  .interestingThings{
+    color: #66FCF1;
+    padding-bottom: 10%;    /* styling the interestingThings */
+    text-align: center;
+    font-size: 300%;
+    padding-top: 2%;
+  }
+
+  .topicContainer{
+    margin-bottom: 12%;   /* styling the container of the topic */
+    opacity: 0.8;
+    transition: opacity 2s;
+  }
+
+  .topicContainer:hover{
+    transform: scale(1.08);    /* styling the topic container when it is a hover*/
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    opacity: 1;
+  }
+
+  .topicContainer:hover > .col > .descriptionBox > .titleDescription{
+    opacity: 1;   /* styling the hover and its opacity */
+  }
+
+  .topicContainer:hover > .col > .descriptionBox > .descriptionImage{
+    opacity: 1;   /* styling the hover and its opacity */
+  }
+
+  .card{
+    width: 500px;
+    background-color: #0B0C10;
+    border: solid #0B0C10;    /* styling the card*/
+    margin: auto;
+    color: #C5C6C7;
+  }
+
+  .arrowBox{
+    max-width: 60px;   /* styling the arrow box*/
+  }
+
+  .descriptionBox{
+    width: 500px;
+    background-color: #0B0C10;
+    border: solid #0B0C10;
+    margin: auto;    /* styling the descriptionBox */
+    color: #C5C6C7;
+    position: relative;
+    top: 12%;
+  }
+
+  .descriptionArrow{
+    font-size: 40px;
+    color: #C5C6C7;
+    width: 100%;
+    text-align: center;    /* styling the descriptionArrow */
+    position: relative;
+    top: 36%;
+  }
+
+  .titleDescription{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 0.8;    /* styling the description */
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+  }
+
+  .descriptionImage{
+    font-size: 18px;
+    text-align: justify;   /* styling the image inside the description */
+    opacity: 0.15;
+    -webkit-transition: opacity 2s;
+    transition: opacity 2s;
+  }
+
+  .mobileDescription{
+    display: none;
+  }
+
+  @media (max-width: 1570px) {  /* This cancel arrows with a tight screen */
+    .arrowBox{
+      display: none;
+    }
+  }
+
+  @media (max-width: 1486px) {  /* This brings up corrects div for mobile */
+    .mobileDescription{
+      display: block;
+    }
+
+    .description{
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .asideLeft {
+      display: block;
+      }                      /* size for smaller screens*/
+
+      .asideRight {
+        width: 60%;
+      }
+    }
+  /* end of Page 4 Content Page */

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+ html, body{
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+
+ .node {
+   cursor: pointer;
+ }
+
+ .node:hover {
+   stroke: #000;
+   stroke-width: 1.5px;
+ }
+
+ .node--leaf {
+   fill: white;
+ }
+
+ .label {
+   font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+   text-anchor: middle;
+   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+ }
+
+ .label,
+ .node--root,
+ .node--leaf {
+   pointer-events: none;
+ }
+
+</style>
+<svg width="100%" height="100%"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+ // Copied from https://bl.ocks.org/mbostock/7607535
+ var width = window.innerWidth,
+     height = window.innerHeight;
+ var svg = d3.select("svg"),
+     margin = 20,
+     diameter = Math.min(width, height),
+     g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+ var color = d3.scaleLinear()
+               .domain([-1, 5])
+               .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+               .interpolate(d3.interpolateHcl);
+
+ var pack = d3.pack()
+              .size([diameter - margin, diameter - margin])
+              .padding(2);
+
+ root = {"name":"/","children":[{"name":".","children":[{"name":"francesco_casarella","children":[{"name":"prato_andrea","children":[{"name":"andrea4.html","children":[]},{"name":"andrea2.html","children":[]},{"name":"andrea3.html","children":[]},{"name":"andrea1.html","children":[]}]},{"name":"francesco","children":[{"name":"francesco3.html","children":[]},{"name":"francesco4.html","children":[]},{"name":"francesco2.html","children":[]},{"name":"francesco1.html","children":[]}]},{"name":"palmieri_roberto","children":[{"name":"roberto2.html","children":[]},{"name":"roberto1.html","children":[]},{"name":"roberto4.html","children":[]},{"name":"roberto3.html","children":[]}]},{"name":"fazlic_mak","children":[{"name":"fazlic1.html","children":[]},{"name":"fazlic3.html","children":[]},{"name":"fazlic4.html","children":[]},{"name":"fazlic2.html","children":[]}]},{"name":"sawhney_harkeerat_singh","children":[{"name":"harkeerat3.html","children":[]},{"name":"harkeerat2.html","children":[]},{"name":"harkeerat4.html","children":[]},{"name":"harkeerat1.html","children":[]}]},{"name":"mammadov_ayaz","children":[{"name":"ayaz3.html","children":[]},{"name":"ayaz2.html","children":[]},{"name":"ayaz1.html","children":[]},{"name":"ayaz4.html","children":[]}]}]},{"name":"michele_andrea","children":[{"name":"sugimoto_georgi","children":[{"name":"georgi1.html","children":[]},{"name":"georgi2.html","children":[]},{"name":"georgi3.html","children":[]},{"name":"georgi4.html","children":[]}]},{"name":"mariia_khokhriakova","children":[{"name":"mariia1.html","children":[]},{"name":"mariia2.html","children":[]},{"name":"mariia4.html","children":[]},{"name":"mariia3.html","children":[]}]},{"name":"michele","children":[{"name":"michele2.html","children":[]},{"name":"michele3.html","children":[]},{"name":"michele1.html","children":[]},{"name":"michele4.html","children":[]}]},{"name":"zampiello_lutzu_fabio_fabrizio","children":[{"name":"fabio3.html","children":[]},{"name":"fabio2.html","children":[]},{"name":"fabio1.html","children":[]},{"name":"fabio4.html","children":[]}]},{"name":"tafa_ramazan","children":[{"name":"ramazan2.html","children":[]},{"name":"ramazan3.html","children":[]},{"name":"ramazan4.html","children":[]},{"name":"ramazan1.html","children":[]}]},{"name":"fazlic_mak","children":[]}]},{"name":"paola_guma","children":[{"name":"paola","children":[{"name":"paola3.html","children":[]},{"name":"paola4.html","children":[]},{"name":"paola2.html","children":[]},{"name":"paola1.html","children":[]}]},{"name":"copa_alan","children":[{"name":"alan3.html","children":[]},{"name":"alan2.html","children":[]},{"name":"alan4.html","children":[]},{"name":"alan1.html","children":[]}]},{"name":"gobbetti_alessandro","children":[{"name":"alessandro2.html","children":[]},{"name":"alessandro4.html","children":[]},{"name":"alessandro3.html","children":[]},{"name":"alessandro1.html","children":[]}]},{"name":"fazlic_mak","children":[]},{"name":"cattaneo_adnan","children":[{"name":"adnan1.html","children":[]},{"name":"adnan3.html","children":[]},{"name":"adnan4.html","children":[]},{"name":"adnan2.html","children":[]}]},{"name":"bragalini_daniel","children":[{"name":"daniel3.html","children":[]},{"name":"daniel4.html","children":[]},{"name":"daniel2.html","children":[]},{"name":"daniel1.html","children":[]}]}]},{"name":"daniela_gjorgjieva","children":[{"name":"sugimoto_alen","children":[{"name":"alen2.html","children":[]},{"name":"alen3.html","children":[]},{"name":"alen4.html","children":[]},{"name":"alen1.html","children":[]}]},{"name":"scocco_vittoria_marina","children":[{"name":"marina1.html","children":[]},{"name":"marina2.html","children":[]},{"name":"marina4.html","children":[]},{"name":"marina3.html","children":[]}]},{"name":"solaro_giacomo","children":[{"name":"giacomo4.html","children":[]},{"name":"giacomo3.html","children":[]},{"name":"giacomo2.html","children":[]},{"name":"giacomo1.html","children":[]}]},{"name":"spinelli_elisa","children":[{"name":"elisa3.html","children":[]},{"name":"elisa2.html","children":[]},{"name":"elisa1.html","children":[]},{"name":"elisa4.html","children":[]}]},{"name":"fazlic_mak","children":[]},{"name":"daniela","children":[{"name":"daniela1.html","children":[]},{"name":"daniela2.html","children":[]},{"name":"daniela3.html","children":[]},{"name":"daniela4.html","children":[]}]}]},{"name":"laurenz_ebi","children":[{"name":"horler_linus","children":[{"name":"linus1.html","children":[]},{"name":"linus2.html","children":[]},{"name":"linus3.html","children":[]},{"name":"linus4.html","children":[]}]},{"name":"guex_morgane","children":[{"name":"morgane3.html","children":[]},{"name":"morgane4.html","children":[]},{"name":"morgane1.html","children":[]},{"name":"morgane2.html","children":[]}]},{"name":"lunghi_marzio","children":[{"name":"marzio1.html","children":[]},{"name":"marzio2.html","children":[]},{"name":"marzio4.html","children":[]},{"name":"marzio3.html","children":[]}]},{"name":"kryeziu_diell","children":[{"name":"diell3.html","children":[]},{"name":"diell2.html","children":[]},{"name":"diell1.html","children":[]},{"name":"diell4.html","children":[]}]},{"name":"goycochea_gianluca","children":[{"name":"gianluca4.html","children":[]},{"name":"gianluca2.html","children":[]},{"name":"gianluca1.html","children":[]},{"name":"gianluca3.html","children":[]}]},{"name":"fazlic_mak","children":[]},{"name":"ebi_laurenz","children":[{"name":"laurenz2.html","children":[]},{"name":"laurenz4.html","children":[]},{"name":"laurenz3.html","children":[]},{"name":"laurenz1.html","children":[]}]}]}]}]};
+ root = d3.hierarchy(root)
+          .sum(function(d) { return d.children.length + 1; })
+          .sort(function(a, b) { return b.value - a.value; });
+
+ var focus = root,
+     nodes = pack(root).descendants(),
+     view;
+
+ var circle = g.selectAll("circle")
+               .data(nodes)
+               .enter().append("circle")
+               .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+               .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+               .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+
+ var text = g.selectAll("text")
+             .data(nodes)
+             .enter().append("text")
+             .attr("class", "label")
+             .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+             .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+             .text(function(d) { return d.data.name; });
+
+ var node = g.selectAll("circle,text");
+
+ svg
+   .style("background", color(-1))
+   .on("click", function() { zoom(root); });
+
+ zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+ function zoom(d) {
+   var focus0 = focus; focus = d;
+
+   var transition = d3.transition()
+                      .duration(d3.event.altKey ? 7500 : 750)
+                      .tween("zoom", function(d) {
+                        var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                        return function(t) { zoomTo(i(t)); };
+                      });
+
+   transition.selectAll("text")
+             .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+             .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+             .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+ }
+
+ function zoomTo(v) {
+   var k = diameter / v[2]; view = v;
+   node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+   circle.attr("r", function(d) { return d.r * k; });
+ }
+</script>
